@@ -177,7 +177,7 @@ set.seed(1)
 tempCorpus <- VCorpus(VectorSource(fileReviews.df$content))
 fileReviews.df$content <- sapply(tm_map(tempCorpus, removeWords, c("app","use","habit")), as.character)
 
-trainIDs <- sample(1:(dim(fileReviews.df)[1]), dim(fileReviews.df)[1]*0.7)
+trainIDs <- sample(1:(dim(fileReviews.df)[1]), dim(fileReviews.df)[1]*0.8)
 train <- fileReviews.df[trainIDs,] 
 valid <- fileReviews.df[-trainIDs,]
 
